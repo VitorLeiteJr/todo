@@ -11,7 +11,6 @@ const AddTodo = () => {
       <Input 
         name="input"
         type="text"
-        value="text"
       placeholder="add todo" />
         <Button type="submit" text="Add"></Button>
     </div>
