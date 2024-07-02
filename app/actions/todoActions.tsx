@@ -48,6 +48,8 @@ export async function edit(formData: FormData){
     const input = formData.get("newTitle") as string
     const inputId = formData.get("inputId") as string
 
+   
+
     await prisma.todo.update({
         where: {
             id: inputId
@@ -64,7 +66,9 @@ export async function edit(formData: FormData){
 
 
 export async function deleteTodo(formData: FormData){
-    const inputId = formData.get("") as string
+    const inputId = formData.get("inputId") as string
+
+        
     await prisma.todo.delete({
         where: {
             id: inputId,

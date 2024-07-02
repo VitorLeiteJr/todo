@@ -7,7 +7,7 @@ import Form from "../ui/form";
 import Input from "../ui/input";
 import { BsFillTrashFill } from "react-icons/bs";
 
-const DeleTodo = ({todo}: todoType) => {
+const DeleTodo = ({todo}: {todo: todoType}) => {
     return (
         <Form action={deleteTodo}>
             <Input type="hidden"

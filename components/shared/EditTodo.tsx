@@ -8,12 +8,18 @@ import { useState } from "react";
 import { todoType } from "@/types/todoType";
 import { BiEdit } from "react-icons/bi";
 
-const EditTodo = ({todo}: todoType) => {
+const EditTodo = ({todo}: {todo: todoType}) => {
     const [editTodo, setEditTodo] = useState(false)
     const handleEdit = ()=>{
+        if(todo.isCompleted===true){
+            return;
+        }
         setEditTodo(!editTodo);
     }
     const handleSubmit =()=>{
+        setEditTodo(false)
+    }
+    const handleCancel =()=>{
         setEditTodo(false)
     }
 
@@ -33,8 +39,10 @@ const EditTodo = ({todo}: todoType) => {
             <div className="flex justify-center">
             <Input type="text"
             name="newTitle"
-            placeholder="Edit todo"></Input>
+            defaultvalue={todo.title}
+             placeholder="Edit todo"/>
             <Button type="submit" text="Save"/>
+            <Button text="Cancel" onClick={handleCancel}/>
             </div>
             </Form>): null}
 

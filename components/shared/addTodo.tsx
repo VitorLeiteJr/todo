@@ -11,7 +11,7 @@ const AddTodo = () => {
       <Input 
         name="input"
         type="text"
-      placeholder="add todo" />
+      placeholder="Write and add your todo..." />
         <Button type="submit" text="Add"></Button>
     </div>
    </Form>
